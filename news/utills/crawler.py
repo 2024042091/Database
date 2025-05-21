@@ -62,14 +62,14 @@ def summarize_text(text):
 
 # 메인 실행 코드
 # 기본값으로 설정된 키워드와 페이지 수 사용
-titles, contents = crawling(keyword='복지', page=3)
+if __name__ == "__main__":
+    titles, contents = crawling(keyword='복지', page=3)
 
-print("\n===== 요약 결과 =====")
-for i, (title, content) in enumerate(zip(titles, contents)):
-    print(f"\n[기사 {i+1}]")
-    print(f"제목: {title}")
-    
-    # 요약 실행
-    summary = summarize_text(content)
-    print(f"요약: {summary}")
-    print("-" * 50)
+    print("\n===== 요약 결과 =====")
+    for i, (title, content) in enumerate(zip(titles, contents)):
+        print(f"\n[기사 {i+1}]")
+        print(f"제목: {title}")
+        
+        summary = summarize_text(content)
+        print(f"요약: {summary}")
+        print("-" * 50)
