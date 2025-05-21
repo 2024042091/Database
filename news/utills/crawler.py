@@ -3,6 +3,9 @@ from bs4 import BeautifulSoup
 import time
 from transformers import PreTrainedTokenizerFast, BartForConditionalGeneration
 
+print("==== 크롤러 실행 시작 ====")
+
+
 # 모델 로드
 tokenizer = PreTrainedTokenizerFast.from_pretrained('gogamza/kobart-base-v2')
 model = BartForConditionalGeneration.from_pretrained('gogamza/kobart-summarization')
